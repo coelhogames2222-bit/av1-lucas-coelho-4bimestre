@@ -1,60 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GameVault | Início</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Introdução Javascript</title>
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-md bg-body-tertiary">
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top gv-navbar">
       <div class="container">
-        <a class="navbar-brand" href="index.html"> TechFix </a>
-
-        <div class="navbar-nav">
-          <a class="nav-link" href="index.html">Início</a>
-          <a class="nav-link" href="orcamento.html">Orçamento</a>
+        <a class="navbar-brand gv-logo" href="index.html">Game<span>Vault</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="favoritos.html">Favoritos <span class="badge gv-badge-nav" id="badgeFavoritos">0</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="loja.html">Loja <span class="badge gv-badge-nav" id="badgeCarrinho">0</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastrar jogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+          </ul>
         </div>
       </div>
     </nav>
-    <main class="container mt-5">
-      <h1 id="titulo">Verificador de idade</h1>
+  </header>
 
-      <form id="formulario">
-        <div class="mb-3">
-          <label for="nome" class="form-label"> Nome: </label>
+  <main>
 
-          <input type="text" id="nome" class="form-control" />
+    <section class="gv-hero d-flex align-items-center">
+      <div class="container">
+        <p class="gv-eyebrow">Seu acervo de jogos digitais</p>
+        <h1 class="gv-title">Organize, descubra e favorite seus jogos</h1>
+        <p class="lead gv-lead">Explore o catálogo por categoria, busque pelo nome e cadastre novos títulos.</p>
+        <a href="catalogo.html" class="btn btn-gv btn-lg">Ver catálogo</a>
+        <a href="loja.html" class="btn btn-outline-light btn-lg">Ir para a loja</a>
+      </div>
+    </section>
+
+    <section class="py-4 gv-stats">
+      <div class="container">
+        <div class="row g-3 text-center">
+          <div class="col-6 col-md-3"><div class="gv-stat"><span class="gv-stat-number" id="statTotal">0</span><span class="gv-stat-label">Jogos</span></div></div>
+          <div class="col-6 col-md-3"><div class="gv-stat"><span class="gv-stat-number" id="statFavoritos">0</span><span class="gv-stat-label">Favoritos</span></div></div>
+          <div class="col-6 col-md-3"><div class="gv-stat"><span class="gv-stat-number" id="statCategorias">0</span><span class="gv-stat-label">Categorias</span></div></div>
+          <div class="col-6 col-md-3"><div class="gv-stat"><span class="gv-stat-number" id="statMedia">0,0</span><span class="gv-stat-label">Nota média</span></div></div>
         </div>
+      </div>
+    </section>
 
-        <div class="mb-3">
-          <label for="idade" class="form-label"> Idade: </label>
+    <section class="py-5">
+      <div class="container">
+        <h2 class="gv-section-title">Categorias</h2>
+        <div id="categoriasHome" class="row g-3"></div>
+      </div>
+    </section>
 
-          <input type="number" id="idade" class="form-control" />
-        </div>
+    <section class="py-5 gv-alt">
+      <div class="container">
+        <h2 class="gv-section-title">Mais bem avaliados</h2>
+        <div id="listaDestaques" class="row g-4"></div>
+      </div>
+    </section>
 
-        <button id="botao" type="submit" class="btn btn-primary">
-          Verificar
-        </button>
-      </form>
+  </main>
 
-      <p id="resultado" class="alert d-none mt-3"></p>
-    </main>
+  <footer class="gv-footer py-4 text-center">
+    <p class="mb-1 gv-logo">Game<span>Vault</span></p>
+    <small class="text-secondary">Projeto acadêmico: HTML, CSS, Bootstrap e JavaScript.</small>
+  </footer>
 
-    <script src="js/script.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toastFeedback" class="toast" role="status"><div class="toast-body" id="toastMensagem"></div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
