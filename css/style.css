@@ -1,0 +1,362 @@
+/* =========================================================
+   GameVault - estilo simples
+   Fundo escuro, roxo (principal) e ciano (destaque).
+   Fontes: Orbitron (títulos) e Inter (texto).
+   ========================================================= */
+
+:root {
+  --bg: #1f1e3a;
+  --bg-alt: #140f26;
+  --card: #1b1533;
+  --borda: #2e2552;
+  --roxo: #7c2caa;
+  --ciano: #7d39a5;
+  --texto: #ece9f7;
+  --suave: #a59fc0;
+  --perigo: #f43f5e;
+  --sucesso: #22c55e;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.text-secondary { color: var(--suave) !important; }
+
+/* ---------- Menu ---------- */
+.gv-navbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--borda);
+}
+
+.gv-logo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  color: #fff;
+  text-decoration: none;
+}
+.gv-logo span { color: var(--ciano); }
+
+.navbar-nav .nav-link { color: var(--suave); }
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { color: var(--ciano); }
+
+.gv-badge-nav {
+  background: var(--roxo);
+  color: #f8f8f8;
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+
+/* ---------- Títulos e textos ---------- */
+.gv-hero {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: var(--bg);
+}
+
+.gv-eyebrow {
+  color: var(--ciano);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.gv-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.gv-lead { color: var(--suave); max-width: 560px; margin-bottom: 1.5rem; }
+
+.gv-page-header {
+  padding: 110px 0 2rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--borda);
+}
+
+.gv-page-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 0.4rem;
+}
+
+.gv-section-title {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--roxo);
+  display: inline-block;
+}
+
+.gv-side-title { font-family: "Orbitron", sans-serif; margin-bottom: 1rem; }
+
+.gv-alt { background: var(--bg-alt); }
+.gv-link { color: var(--ciano); }
+
+/* ---------- Botões ---------- */
+.btn-gv {
+  background: var(--roxo);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+}
+.btn-gv:hover, .btn-gv:focus { background: #7646e8; color: #fff; }
+.btn-gv:disabled { background: var(--roxo); opacity: 0.45; }
+
+/* ---------- Indicadores ---------- */
+.gv-stats { background: var(--bg-alt); border-block: 1px solid var(--borda); }
+
+.gv-stat {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1rem 0.5rem;
+}
+.gv-stat-number {
+  display: block;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.7rem;
+  color: var(--ciano);
+}
+.gv-stat-label { font-size: 0.85rem; color: var(--suave); }
+
+/* ---------- Formulários ---------- */
+.form-label { font-weight: 500; font-size: 0.9rem; }
+
+.gv-input {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  color: var(--texto);
+}
+.gv-input:focus {
+  background: var(--card);
+  color: var(--texto);
+  border-color: var(--roxo);
+  box-shadow: none;
+}
+.gv-input::placeholder { color: #6f6990; }
+.gv-input option { background: var(--card); }
+
+/* mensagem de erro da descrição (fica ao lado do contador) */
+.d-block-feedback { width: auto; }
+.is-invalid ~ div .invalid-feedback { display: block; }
+
+#alertaFormulario { border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 1rem; font-weight: 500; }
+#alertaFormulario.sucesso { background: rgba(34, 197, 94, 0.15); border: 1px solid var(--sucesso); color: #86efac; }
+#alertaFormulario.erro { background: rgba(244, 63, 94, 0.15); border: 1px solid var(--perigo); color: #fda4af; }
+
+/* ---------- Filtros ---------- */
+.gv-chip {
+  background: transparent;
+  color: var(--suave);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 0.3rem 1rem;
+  font-size: 0.9rem;
+}
+.gv-chip:hover { color: #fff; border-color: var(--roxo); }
+.gv-chip.ativo { background: var(--roxo); border-color: var(--roxo); color: #fff; }
+
+/* ---------- Cards de jogos ---------- */
+.gv-card {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.gv-card:hover { border-color: var(--roxo); }
+
+.gv-capa {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+}
+
+/* uma cor sólida por categoria */
+.capa-acao { background: #b91c1c; }
+.capa-aventura { background: #047857; }
+.capa-rpg { background: #6d28d9; }
+.capa-estrategia { background: #1d4ed8; }
+.capa-esporte { background: #a16207; }
+.capa-puzzle { background: #0e7490; }
+.capa-terror { background: #374151; }
+.capa-simulacao { background: #be185d; }
+
+.gv-nota {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fde047;
+}
+
+.gv-card-body { padding: 1rem; display: flex; flex-direction: column; flex: 1; }
+.gv-card-titulo { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; }
+.gv-meta { font-size: 0.8rem; color: var(--suave); margin-bottom: 0.6rem; }
+.gv-desc { font-size: 0.9rem; color: var(--suave); flex: 1; }
+
+.gv-badge {
+  align-self: flex-start;
+  background: rgba(34, 211, 238, 0.12);
+  color: var(--ciano);
+  border-radius: 6px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.gv-acoes { display: flex; gap: 0.5rem; margin-top: 0.8rem; }
+
+.btn-fav, .btn-remover {
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--suave);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+.btn-fav:hover, .btn-fav.ativo { border-color: #fde047; color: #fde047; }
+.btn-remover:hover { border-color: var(--perigo); color: var(--perigo); }
+
+.gv-empty {
+  border: 2px dashed var(--borda);
+  border-radius: 12px;
+  padding: 3rem 1rem;
+}
+
+/* ---------- Início: categorias ---------- */
+.gv-cat-tile {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1.1rem 1rem;
+  text-align: center;
+}
+.gv-cat-tile:hover { color: #fff; filter: brightness(1.15); }
+.gv-cat-icone { display: block; font-size: 2rem; }
+.gv-cat-nome { display: block; font-weight: 600; margin-top: 0.3rem; }
+.gv-cat-qtd { display: block; font-size: 0.8rem; opacity: 0.85; }
+
+/* ---------- Listas e Sobre ---------- */
+.gv-list .list-group-item {
+  background: var(--card);
+  border-color: var(--borda);
+  color: var(--texto);
+}
+
+.gv-feature {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 1.1rem;
+  height: 100%;
+}
+.gv-feature h3 { font-size: 1.05rem; font-weight: 600; color: var(--ciano); margin-bottom: 0.4rem; }
+.gv-feature p { font-size: 0.9rem; color: var(--suave); margin-bottom: 0; }
+.gv-feature-icon { font-size: 1.8rem; display: block; margin-bottom: 0.3rem; }
+.gv-feature code, .accordion-body code { color: var(--ciano); }
+
+.gv-accordion .accordion-item { background: var(--card); border: 1px solid var(--borda); color: var(--texto); }
+.gv-accordion .accordion-button { background: var(--card); color: var(--texto); box-shadow: none; }
+.gv-accordion .accordion-button:not(.collapsed) { background: var(--bg-alt); color: #fff; }
+.gv-accordion .accordion-button::after { filter: invert(1); }
+.gv-accordion .accordion-body { color: var(--suave); }
+.gv-accordion .accordion-body a { color: var(--ciano); }
+
+/* ---------- Loja ---------- */
+.gv-preco {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  color: var(--ciano);
+  margin-bottom: 0.7rem;
+}
+.gv-preco-inline { color: var(--ciano); font-weight: 600; }
+
+.gv-compra { display: flex; align-items: center; gap: 0.5rem; margin-top: auto; }
+.gv-qtd { width: 70px; flex: 0 0 70px; }
+
+.gv-painel {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+@media (min-width: 992px) {
+  .gv-sticky { position: sticky; top: 90px; }
+}
+
+.gv-item-carrinho { padding: 0.8rem 0; border-bottom: 1px solid var(--borda); }
+.gv-item-carrinho:last-child { border-bottom: none; }
+
+.gv-controle-qtd {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  padding: 0.1rem 0.4rem;
+}
+.btn-qtd {
+  background: transparent;
+  border: none;
+  color: var(--ciano);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.1rem 0.3rem;
+}
+.btn-qtd:hover { color: #fff; }
+
+.gv-totais { border-top: 1px solid var(--borda); padding-top: 0.8rem; }
+.gv-total-linha { display: flex; justify-content: space-between; margin-bottom: 0.3rem; }
+.gv-total-final {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  color: var(--ciano);
+  margin-top: 0.4rem;
+}
+
+.gv-modal .modal-content {
+  background: var(--card);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+}
+.gv-modal .modal-header,
+.gv-modal .modal-footer { border-color: var(--borda); }
+
+/* ---------- Avisos (toast) ---------- */
+.toast.toast-sucesso { background: #15803d; color: #fff; }
+.toast.toast-erro { background: #be123c; color: #fff; }
+.toast.toast-info { background: #4338ca; color: #fff; }
+
+/* ---------- Rodapé ---------- */
+.gv-footer { background: #0a0813; border-top: 1px solid var(--borda); }
+
+/* ---------- Celular ---------- */
+@media (max-width: 575.98px) {
+  .gv-hero { text-align: center; }
+  .gv-lead { margin-inline: auto; }
+  .gv-hero .d-flex { justify-content: center; }
+}
